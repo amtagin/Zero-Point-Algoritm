@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>zero point algoritm</title>
+
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/back.css" />
+  </head>
+
+  <body>
+    <video id="background-video" autoplay loop muted playsinline>
+      <source src="assets/noise.mp4" type="video/mp4" />
+    </video>
+
+    <div id="all"></div>
+      <div id="info_wrap">
+        <div id="info-icon">+</div>
+
+        <div id="info-tooltip">
+          <p>
+            한국 사회에서 청년의 죽음은 끊임없이 기사화된다. 자살, 산업재해,
+            범죄 피해와 같은 사건들은 빠르게 보도되지만, 대부분의 기사에서
+            개인은 ‘20대 A씨’라는 익명의 표기로 축약된다. 삶의 구체적인 맥락은
+            삭제되고, 죽음은 통계적 수치이자 소비 가능한 사건으로 평면화되어
+            재생산된다.
+            <br />
+            <br />
+            이러한 보도 방식은 ‘20대 A씨’라는 동일한 익명 표기를 통해 개인의
+            죽음을 하나의 통제변인처럼 기능하게 만든다. 서로 다른 삶은 동일한
+            형식 안에서 비교 가능한 정보로 환원되고, 어떤 죽음은 더 안타깝게
+            소비되는 반면 어떤 죽음은 무관심 속에서 빠르게 잊혀진다. 사회는
+            무의식적으로 죽음의 가치를 분류하고, 그 무게를 측정하려 한다.
+            <br />
+            <br />
+            ≪Zero-Point Algorithm≫은 이러한 사회적 태도에 질문을 던지는 디자인
+            리서치이자 시각 실험이다. 프로젝트는 서로 다른 사회적 배경을 가진
+            9명의 가상 페르소나를 통해, 기사 속 익명의 ‘A씨’를 다시 하나의
+            삶이자 인격체로 복원하는 것에서 출발한다.
+          </p>
+        </div>
+      </div>
+      <div id="tooltip"></div>
+
+      <h1>
+        <img id="logo" src="assets/logo.png" alt="logo" />
+      </h1>
+
+      <div id="tv_system">
+        <img id="tv-frame" src="assets/모니터.png" alt="TV Frame" />
+
+        <div id="tv-wrapper">
+          <img id="overlay-img" src="assets/뉴스화면0.gif" alt="tvlight" />
+          <div id="p5-container"></div>
+          <img id="tv-gif" src="" alt="TV Channel GIF" />
+        </div>
+
+        <div id="controls">
+          <button id="prev-btn">◀️</button>
+          <button id="default-btn">⏸️</button>
+          <button id="next-btn">▶️</button>
+        </div>
+      </div>
+
+      <div id="weights-overlay">
+        <ul id="weight-list">
+          <li class="weight" data-index="0"></li>
+          <li class="weight" data-index="1"></li>
+          <li class="weight" data-index="2"></li>
+          <li class="weight" data-index="3"></li>
+          <li class="weight" data-index="4"></li>
+          <li class="weight" data-index="5"></li>
+          <li class="weight" data-index="6"></li>
+          <li class="weight" data-index="7"></li>
+          <li class="weight" data-index="8"></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 오프닝 오버레이 -->
+    <div id="intro-overlay">
+      <video id="intro-video" autoplay muted loop playsinline>
+        <source src="assets/op.mp4" type="video/mp4" />
+      </video>
+    </div>
+
+    <div id="black-cover"></div>
+
+    <!-- p5.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/addons/p5.sound.min.js"></script>
+
+    <script src="js/sketch.js"></script>
+
+    <script src="js/btn.js"></script>
+    <script src="js/channel.js"></script>
+    <script src="js/decs.js"></script>
+  </body>
+</html>
