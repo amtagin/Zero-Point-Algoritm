@@ -1,0 +1,61 @@
+/* =========================
+   INTRO
+========================= */
+
+#intro-overlay {
+  inset: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  overflow: hidden;
+
+  background: black;
+
+  color: white;
+  text-align: center;
+  font-family: sans-serif;
+  font-size: 20px;
+
+  z-index: var(--z-intro);
+}
+
+#intro-video {
+  position: absolute;
+
+  top: 50%;
+  left: 50%;
+
+  width: 100%;
+  height: auto;
+
+  object-fit: contain;
+
+  transform: translate(-50%, -50%);
+
+  z-index: -1;
+}
+
+#black-cover {
+  inset: 0;
+
+  display: none;
+
+  background: black;
+
+  transition: opacity 1s ease;
+
+  z-index: var(--z-intro);
+}
+
+#background-video {
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+  z-index: 0;
+}

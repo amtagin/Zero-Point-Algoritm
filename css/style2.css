@@ -1,0 +1,49 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+    font-size: 25px;
+}
+ul,
+ol {
+  list-style: none;
+}
+
+#wrap {
+    width: 1920px;
+    margin: 100px auto;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    position: relative;
+}
+
+#info-icon {
+position: absolute;
+left: 0;
+}
+
+.logo {
+    margin: auto;
+}
+
+
+#tv-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.tv_frame {
+    background-color: yellowgreen;
+}
+.urn {
+    display: flex;
+    align-items: end;
+    gap: 20px;
+
+}

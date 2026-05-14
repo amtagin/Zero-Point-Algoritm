@@ -1,0 +1,323 @@
+/* =========================
+   RESET
+========================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+/* =========================
+   ROOT
+========================= */
+
+:root {
+  --tv-width: 640px;
+
+  --tooltip-scale: 3.8;
+  --tooltip-offset-y: 195px;
+
+  --z-bg: -100;
+  --z-tv: 5;
+  --z-frame: 100;
+  --z-overlay: 101;
+  --z-weights: 150;
+  --z-tooltip: 200;
+  --z-ui: 300;
+  --z-intro: 9999;
+}
+
+/* =========================
+   BASE
+========================= */
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+
+  overflow: hidden;
+
+  background: white;
+
+  transform-origin: center center;
+
+  hyphens: none;
+  word-break: keep-all;
+}
+
+img,
+video {
+  user-select: none;
+}
+
+/* =========================
+   COMMON FIXED ELEMENTS
+========================= */
+
+#tv-frame,
+#tv-wrapper,
+#logo,
+#weights-overlay,
+#tooltip,
+#controls,
+#info-icon,
+#info-tooltip {
+  position: fixed;
+}
+
+#background-video,
+#intro-overlay,
+#black-cover {
+  position: fixed;
+  inset: 0;
+}
+
+/* =========================
+   BACKGROUND
+========================= */
+
+#background-video {
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  z-index: 0;
+}
+
+#logo {
+  position: fixed;
+
+  left: 50%;
+  top: 52%;
+
+  width: 470px;
+  height: auto;
+
+  transform: translate(-50%, -175%);
+
+  z-index: var(--z-tv);
+
+  pointer-events: none;
+}
+
+/* =========================
+   TV SYSTEM
+========================= */
+
+#tv_system {
+  position: fixed;
+
+  left: 50%;
+  top: 57%;
+
+  width: 640px;
+  height: 640px;
+
+  transform: translate(-50%, -50%);
+}
+
+#tv-frame {
+  position: relative;
+
+  left: 50%;
+  top: 50%;
+
+  width: 640px;
+
+  transform: translate(-50%, -50%);
+
+  z-index: var(--z-frame);
+
+  pointer-events: none;
+}
+
+#tv-wrapper {
+  position: absolute;
+
+  left: 50%;
+  top: 46%;
+
+  width: 487px;
+  height: 277px;
+
+  transform: translate(-50%, -58%);
+
+  z-index: var(--z-tv);
+
+  pointer-events: none;
+}
+
+/* =========================
+   TV LAYERS
+========================= */
+
+#p5-container,
+#tv-gif,
+#overlay-img {
+  position: absolute;
+
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  display: none;
+}
+
+#p5-container {
+  background: white;
+  z-index: 1;
+}
+
+#tv-gif {
+  object-fit: contain;
+  z-index: 1;
+}
+
+#overlay-img {
+  object-fit: contain;
+
+  pointer-events: none;
+
+  mix-blend-mode: screen;
+
+  z-index: var(--z-overlay);
+}
+
+/* =========================
+   UI CONTROLS
+========================= */
+
+#controls {
+  position: absolute;
+
+  left: 50%;
+  bottom: 21%;
+
+  transform: translateX(-50%);
+
+  display: flex;
+  gap: 15px;
+
+  z-index: 200;
+}
+
+button {
+  opacity: 0;
+  padding: 7px;
+  cursor: pointer;
+  background-color: aquamarine;
+}
+
+/* =========================
+   WEIGHTS
+========================= */
+
+#weights-overlay {
+  position: absolute;
+
+  left: 50%;
+  bottom: 35%;
+
+  width: 640px;
+
+  transform: translate(-50%, 240px);
+
+  z-index: var(--z-weights);
+
+  pointer-events: none;
+}
+
+#weight-list {
+  display: flex;
+  justify-content: center;
+  gap: 2px;
+
+  pointer-events: auto;
+}
+
+.weight {
+  width: 53px;
+  height: 53px;
+
+  flex-shrink: 0;
+
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  cursor: pointer;
+}
+
+/* =========================
+   TOOLTIP
+========================= */
+
+#tooltip {
+  padding: 0;
+
+  background: transparent;
+
+  border-radius: 4px;
+
+  opacity: 0;
+
+  pointer-events: none;
+
+  transition: opacity 0.2s;
+
+  z-index: var(--z-tooltip);
+}
+
+/* info icon */
+
+#info-icon {
+  position: fixed;
+
+  left: 10%;
+  top: 9%;
+
+  font-size: 40px;
+
+  transform: translate(-50%, -50%);
+}
+
+/* info tooltip */
+
+#info-tooltip {
+  width: 500px;
+  height: 500px;
+  padding: 45px;
+
+  top: 56%;
+  left: 50%;
+
+  transform: translate(-50%, -50%);
+
+  opacity: 0;
+
+  pointer-events: none;
+
+  z-index: calc(var(--z-ui) + 1);
+
+  background-color: black;
+
+  color: #fff;
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+#info-tooltip.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
